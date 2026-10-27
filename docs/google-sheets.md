@@ -25,7 +25,20 @@ SHEETS_WEBHOOK_TOKEN=<the same value as the TOKEN script property>
 
 The token is what protects the sheet: the web app is public, but ignores any request
 that does not carry it. If you redeploy the script as a new version, keep the same URL
-by choosing **Manage deployments → Edit → New version**.
+by choosing **Manage deployments → Edit → New version**. Script code changes only go
+live after a new version is deployed; script properties apply immediately.
+
+## Troubleshooting
+
+The server log shows the reason the script gave:
+
+- `TOKEN script property is not set`: add the `TOKEN` property (Project Settings → Script
+  Properties). The name must be exactly `TOKEN`.
+- `token does not match SHEETS_WEBHOOK_TOKEN`: the property value and the environment
+  variable differ. Copy one into the other, then restart `next dev` so it reloads
+  `.env.local`.
+- The old reply `unauthorized` means the deployed script is still the earlier version of
+  the code. Redeploy it as a new version.
 
 ## What gets stored
 
@@ -53,7 +66,10 @@ function doPost(e) {
   try {
     const body = JSON.parse(e.postData.contents)
     const token = PropertiesService.getScriptProperties().getProperty("TOKEN")
-    if (!token || body.token !== token) return reply({ ok: false, error: "unauthorized" })
+    if (!token) return reply({ ok: false, error: "TOKEN script property is not set" })
+    if (String(body.token || "").trim() !== token.trim()) {
+      return reply({ ok: false, error: "token does not match SHEETS_WEBHOOK_TOKEN" })
+    }
 
     const email = String(body.email || "").trim().toLowerCase()
     if (!email) return reply({ ok: false, error: "missing email" })
