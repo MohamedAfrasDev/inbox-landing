@@ -7,9 +7,18 @@ to it from the server, so the sheet and the script stay private to your Google a
 
 1. Create a new Google Sheet (any name).
 2. Open **Extensions → Apps Script** and replace the code with the script below.
-3. In the script editor open **Project Settings → Script Properties** and add a property
-   named `TOKEN` with a long random value (for example the output of
-   `openssl rand -hex 24`). Keep a copy of it.
+3. In the script editor click the gear icon (**Project Settings**) in the left sidebar. Under
+   **Script Properties** click **Add script property**, enter `TOKEN` as the property and a
+   long random string as the value (for example the output of `openssl rand -hex 24`), then
+   click **Save script properties**. Keep a copy of the value. If you cannot find that
+   section, set it from code instead: add this function, type your value in, run it once from
+   the editor, then delete the function so the value is not left in the script.
+
+   ```js
+   function setToken() {
+     PropertiesService.getScriptProperties().setProperty("TOKEN", "paste-your-long-random-value")
+   }
+   ```
 4. Click **Deploy → New deployment → Web app**. Set **Execute as: Me** and
    **Who has access: Anyone**, then deploy and authorise it when asked.
 5. Copy the **Web app URL**.
