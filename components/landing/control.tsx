@@ -1,6 +1,7 @@
 import { Eye, FlaskConical, Moon } from "lucide-react"
 import { controlPoints } from "./content"
 import { Caption, Shot } from "./shot"
+import { Eyebrow } from "./eyebrow"
 
 const icons = { eye: Eye, moon: Moon, flask: FlaskConical }
 
@@ -8,6 +9,7 @@ export function Control() {
   return (
     <section id="control" className="bg-pastel-soft scroll-mt-24 py-24">
       <div className="mx-auto w-full max-w-6xl px-6">
+        <Eyebrow center>Control</Eyebrow>
         <h2 className="text-center text-4xl sm:text-5xl">You decide what it may say.</h2>
         <ul className="mx-auto mt-12 grid max-w-5xl gap-4 md:grid-cols-3">
           {controlPoints.map(({ icon, text }) => {

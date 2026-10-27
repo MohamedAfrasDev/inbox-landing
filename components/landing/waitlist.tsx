@@ -1,9 +1,11 @@
 import { WaitlistForm } from "./waitlist-form"
+import { Eyebrow } from "./eyebrow"
 
 export function Waitlist() {
   return (
     <section id="waitlist" className="bg-pastel relative scroll-mt-8 py-28">
       <div className="mx-auto w-full max-w-lg px-6 text-center">
+        <Eyebrow center>Waitlist</Eyebrow>
         <h2 className="text-balance text-4xl sm:text-5xl">Be one of the first to try it.</h2>
         <p className="mt-5 leading-relaxed text-muted-foreground">
           Tell us how you sell and we will let you in when your spot opens. No card

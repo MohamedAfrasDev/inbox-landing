@@ -1,9 +1,11 @@
 import { Caption, Shot } from "./shot"
+import { Eyebrow } from "./eyebrow"
 
 export function Activity() {
   return (
     <section className="mx-auto w-full max-w-5xl px-6 py-24">
       <div className="mx-auto max-w-2xl text-center">
+        <Eyebrow center>Trust</Eyebrow>
         <h2 className="text-4xl sm:text-5xl">Nothing happens in the dark.</h2>
         <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
           Every reply the assistant sends is in a log: what the customer asked, what it

@@ -1,6 +1,7 @@
 import { Eye, EyeOff } from "lucide-react"
 import { steps } from "./content"
 import { SampleTag } from "./shot"
+import { Eyebrow } from "./eyebrow"
 
 function Chip({ kind }: { kind: "Public" | "Private" }) {
   const Icon = kind === "Public" ? Eye : EyeOff
@@ -67,14 +68,15 @@ function StepPreview({ index }: { index: number }) {
 export function HowItWorks() {
   return (
     <section id="how" className="mx-auto w-full max-w-5xl scroll-mt-24 px-6 py-24">
-      <h2 className="text-center text-4xl sm:text-5xl">Set it up in three steps.</h2>
+      <Eyebrow center>Setup</Eyebrow>
+        <h2 className="text-center text-4xl sm:text-5xl">Set it up in three steps.</h2>
       <ol className="mt-14 grid gap-5 md:grid-cols-3">
         {steps.map((step, i) => (
           <li
             key={step.title}
             className="flex flex-col rounded-3xl bg-white p-6 shadow-[0_30px_70px_-45px_oklch(0.4_0.12_285/0.5)] ring-1 ring-black/5"
           >
-            <span className="font-heading text-5xl text-brand/70">{i + 1}</span>
+            <span className="text-4xl font-medium tracking-tight text-brand/60">{i + 1}</span>
             <h3 className="mt-2 text-2xl">{step.title}</h3>
             <p className="mt-2 flex-1 leading-relaxed text-muted-foreground">{step.body}</p>
             <div className="mt-6">

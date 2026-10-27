@@ -1,12 +1,14 @@
 import { PRODUCT_NAME } from "./content"
 import { Caption, Shot } from "./shot"
+import { Eyebrow } from "./eyebrow"
 
 export function AdLeak() {
   return (
     <section className="bg-pastel-soft py-24">
       <div className="mx-auto grid w-full max-w-5xl items-center gap-14 px-6 lg:grid-cols-2">
         <div>
-          <h2 className="text-balance text-4xl sm:text-5xl">
+          <Eyebrow>Ad-leak report</Eyebrow>
+        <h2 className="text-balance text-4xl sm:text-5xl">
             See which ad is leaking enquiries.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">

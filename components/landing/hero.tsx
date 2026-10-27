@@ -8,8 +8,8 @@ export function Hero() {
     <section id="top" className="bg-pastel relative -mt-[3.75rem] pb-28 pt-32 sm:pt-40">
       <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-gradient-to-b from-transparent to-background" />
       <div className="mx-auto w-full max-w-3xl px-6 text-center">
-        <h1 className="rise text-balance text-5xl leading-[1.02] sm:text-7xl">
-          Stop losing buyers to <em className="text-brand">unread</em> messages.
+        <h1 className="rise text-balance text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
+          Stop losing buyers to <span className="bg-gradient-to-r from-brand to-[oklch(0.6_0.19_300)] bg-clip-text text-transparent">unread</span> messages.
         </h1>
         <p
           style={{ "--i": 1 } as React.CSSProperties}

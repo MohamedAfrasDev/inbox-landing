@@ -1,10 +1,12 @@
 import { Minus } from "lucide-react"
 import { limits } from "./content"
+import { Eyebrow } from "./eyebrow"
 
 export function Limits() {
   return (
     <section className="bg-pastel-soft py-24">
       <div className="mx-auto w-full max-w-2xl px-6">
+        <Eyebrow center>Honest limits</Eyebrow>
         <h2 className="text-center text-4xl sm:text-5xl">We keep this short on purpose.</h2>
         <ul className="mt-12 divide-y rounded-3xl bg-white/80 px-6 ring-1 ring-black/5">
           {limits.map((item) => (

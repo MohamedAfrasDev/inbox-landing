@@ -1,13 +1,15 @@
 import { JoinCta } from "./cta"
 import { CustomerPhone } from "./scenes"
 import { Caption, Shot } from "./shot"
+import { Eyebrow } from "./eyebrow"
 
 export function Away() {
   return (
     <section className="mx-auto w-full max-w-5xl px-6 py-24">
       <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_1fr]">
         <div>
-          <h2 className="text-balance text-4xl sm:text-5xl">
+          <Eyebrow>While you are away</Eyebrow>
+        <h2 className="text-balance text-4xl sm:text-5xl">
             When you cannot reply, it holds the customer.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">

@@ -1,5 +1,6 @@
 import { jobs } from "./content"
 import { Caption, Crop } from "./shot"
+import { Eyebrow } from "./eyebrow"
 
 const tilts = ["-1.5deg", "1deg", "-1deg"]
 
@@ -7,6 +8,7 @@ export function ThreeJobs() {
   return (
     <section className="bg-pastel-soft py-24">
       <div className="mx-auto w-full max-w-6xl px-6">
+        <Eyebrow center>What it does</Eyebrow>
         <h2 className="text-center text-4xl sm:text-5xl">One tool, three jobs.</h2>
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {jobs.map((job, i) => (
