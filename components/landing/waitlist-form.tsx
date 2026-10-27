@@ -103,7 +103,10 @@ export function WaitlistForm() {
       try {
         const response = await saveWaitlistDetails({ ...input, email })
         if (response.ok) setStage("thanks")
-        else setDetailErrors(response.errors)
+        else {
+          setDetailErrors(response.errors)
+          if (Object.keys(response.errors).length === 0) setFailed(true)
+        }
       } catch {
         setFailed(true)
       }
@@ -114,7 +117,7 @@ export function WaitlistForm() {
     return (
       <div className="flex flex-col items-center gap-3 py-8 text-center">
         <CircleCheck className="size-8 text-brand" aria-hidden />
-        <p className="font-heading text-3xl">Thank you. That helps.</p>
+        <p className="text-3xl font-medium tracking-tight">Thank you. That helps.</p>
         <p className="text-muted-foreground">
           We will email you at {email} when your spot opens.
         </p>
@@ -127,7 +130,7 @@ export function WaitlistForm() {
       <div className="text-left">
         <div className="flex flex-col items-center gap-2 text-center">
           <CircleCheck className="size-8 text-brand" aria-hidden />
-          <p className="font-heading text-3xl">You&apos;re on the list.</p>
+          <p className="text-3xl font-medium tracking-tight">You&apos;re on the list.</p>
           <p className="text-muted-foreground">We will email you at {email}.</p>
         </div>
         <form
