@@ -1,84 +1,102 @@
 export const PRODUCT_NAME = "Inbox"
 
-export const painPoints = [
-  "A buyer asked for the price at 9pm. You saw it the next afternoon.",
-  "You've typed the same delivery and stock answer again and again this week.",
-  "You said “I’ll check and tell you.” Then you never did.",
-  "Your teammate thought you replied. You thought they did.",
-  "Customers write in Sinhala, Tamil, English, or all three in one message.",
+export const navLinks = [
+  { label: "How it works", href: "#how" },
+  { label: "Control", href: "#control" },
+  { label: "FAQ", href: "#faq" },
 ]
 
-export const features = [
+export const problemPoints = [
+  { icon: "layers", text: "Enquiries land in three apps." },
+  { icon: "filter", text: "Spam and jokes look the same as buyers." },
+  { icon: "clock", text: "A late reply is a lost sale." },
+] as const
+
+export const jobs = [
   {
-    icon: "list",
-    title: "Know who to reply to first",
-    body: "Stop opening chats one by one. Buyers ready to order and overdue follow-ups rise to the top.",
-  },
-  {
-    icon: "inbox",
     title: "Everything in one place",
-    body: "WhatsApp and Instagram in a single inbox, so nothing gets lost between apps.",
+    body: "Messenger, Instagram and WhatsApp chats land in one inbox. The same customer on two apps shows up as one person, so you see their whole history.",
+    caption: "All channels, one list",
+    alt: "The inbox chat list with a small channel badge on each customer.",
+    crop: { x: 120, y: 285, w: 580, h: 520 },
   },
   {
-    icon: "tags",
-    title: "Spot orders, not noise",
-    body: "Every chat is labelled automatically: price question, delivery, ready to order, repeat customer, spam.",
+    title: "Know who to answer first",
+    body: "Chats are ranked by buying signal. Ready to buy comes first, general questions next, and jokes are moved aside, not deleted. It tells you why each chat is ranked where it is.",
+    caption: "Ranked by buying signal",
+    alt: "Inbox filters and two chats tagged Ready to buy and From ad.",
+    crop: { x: 130, y: 180, w: 565, h: 415 },
   },
   {
-    icon: "pen",
-    title: "Reply in seconds, in your voice",
-    body: "Get a draft that sounds like you. Edit it if you like, then send. Nothing goes out without your tap.",
+    title: "Replies that sound like you",
+    body: "It learns from how you already answer and drafts the next reply for you to send or edit. At the start it asks you to hold more conversations first, so it can learn your style before drafting.",
+    caption: "Drafts in your style",
+    alt: "A suggested reply with Use, Edit and Regenerate buttons.",
+    crop: { x: 810, y: 500, w: 800, h: 460 },
+  },
+]
+
+export const controlPoints = [
+  {
+    icon: "eye",
+    text: "Mark each detail Public or Private. Cost price stays private, and the assistant never receives it.",
   },
   {
-    icon: "languages",
-    title: "Works the way Sri Lanka chats",
-    body: "Sinhala, Tamil, English and mixed-language messages are handled.",
+    icon: "moon",
+    text: "Turn autopilot on only after hours, or only on one app.",
   },
   {
-    icon: "bell",
-    title: "Never drop a follow-up",
-    body: "Chats that still need action stay visible until you’ve dealt with them.",
+    icon: "flask",
+    text: "Test it yourself first. Ask it questions and see exactly what it would answer.",
   },
 ] as const
 
 export const steps = [
-  { title: "Connect", body: "Link your WhatsApp and Instagram business accounts." },
-  { title: "See", body: "All your chats arrive in one inbox." },
-  { title: "Focus", body: "Start with the labelled conversations that need you now." },
-  { title: "Approve", body: "Review the drafted reply, edit if you like, and send." },
+  {
+    title: "Connect your apps.",
+    body: "Messenger and Instagram first. WhatsApp has extra steps, and we walk you through them.",
+  },
+  {
+    title: "Add what customers ask about.",
+    body: "Upload your product list or paste a sheet. Mark which details are public and which are private.",
+  },
+  {
+    title: "Test it, then switch it on.",
+    body: "Ask it questions yourself. When you are happy, turn on autopilot for after hours only.",
+  },
 ]
 
-export const audiences = [
-  "Instagram clothing shops",
-  "Gift and custom-order sellers",
-  "Beauty and skincare sellers",
-  "Home-based brands",
-  "Small teams sharing one number",
+export const limits = [
+  "It does not take orders or payments.",
+  "It does not confirm stock or promise a discount. It hands those to you.",
+  "It does not pretend to be you. Customers are told it is an AI assistant.",
+  "It does not reply to everything. When it is unsure, it holds the customer and tells you.",
+  "It cannot draft in your voice on day one. It needs your past chats first.",
 ]
 
 export const faqs = [
   {
-    q: `What is ${PRODUCT_NAME}?`,
-    a: "One inbox for your WhatsApp and Instagram chats. It shows you who to reply to first, labels every chat, and drafts replies in your style.",
+    q: "Can it take orders?",
+    a: "No. It answers common questions, holds the customer and hands over to you.",
   },
   {
-    q: "Will it send messages without asking me?",
-    a: "No. You approve every message before it goes out.",
+    q: "Will it share my cost price?",
+    a: "Only fields you mark Public are ever given to it. Private fields are not sent.",
   },
   {
-    q: "Which channels will it work with?",
-    a: "WhatsApp and Instagram first.",
+    q: "Does it work with my WhatsApp number?",
+    a: "Maybe. WhatsApp needs a business account and some numbers cannot be moved. We tell you before you start.",
+  },
+  {
+    q: "How much does it cost?",
+    a: "Not decided yet. People on the waitlist see the price before paying anything.",
   },
   {
     q: "Does it understand Sinhala and Tamil?",
-    a: "Yes, along with English and mixed-language messages.",
+    a: "We are still settling exactly what version 1 supports. We will tell you the full list before you connect anything.",
   },
   {
-    q: "Who is it for?",
-    a: "Sellers and small teams who take orders through chat.",
-  },
-  {
-    q: "Why join the waitlist now?",
-    a: "Early members get first access and priority setup, and help decide what we build first.",
+    q: "What happens to my customers' chats?",
+    a: "We are finalising the privacy settings. Before you connect an app we will tell you what is stored, for how long, and who can see it.",
   },
 ]

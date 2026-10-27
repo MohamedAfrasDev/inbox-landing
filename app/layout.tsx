@@ -14,9 +14,9 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Inbox — stop losing serious buyers in your DMs",
+  title: "Inbox — stop losing buyers to unread messages",
   description:
-    "One inbox for WhatsApp and Instagram, built for Sri Lankan sellers. See who to reply to first, auto-label chats, and approve AI drafts in your own voice.",
+    "One inbox for your Messenger, Instagram and WhatsApp chats. See who is ready to buy and keep customers warm until you are back. Join the waitlist.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

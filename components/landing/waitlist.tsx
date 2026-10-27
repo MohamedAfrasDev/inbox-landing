@@ -2,16 +2,14 @@ import { WaitlistForm } from "./waitlist-form"
 
 export function Waitlist() {
   return (
-    <section id="waitlist" className="scroll-mt-8 bg-muted/60 py-24">
-      <div className="mx-auto w-full max-w-md px-6 text-center">
-        <h2 className="text-balance text-4xl sm:text-5xl">
-          Join the first group of sellers.
-        </h2>
-        <p className="mt-6 leading-relaxed text-muted-foreground">
-          We’re letting in a small group of Sri Lankan sellers first. Early members
-          get priority setup and help shape what we build next.
+    <section id="waitlist" className="bg-pastel relative scroll-mt-8 py-28">
+      <div className="mx-auto w-full max-w-lg px-6 text-center">
+        <h2 className="text-balance text-4xl sm:text-5xl">Be one of the first to try it.</h2>
+        <p className="mt-5 leading-relaxed text-muted-foreground">
+          Tell us how you sell and we will let you in when your spot opens. No card
+          needed.
         </p>
-        <div className="mt-10 rounded-2xl border bg-card p-6 sm:p-8">
+        <div className="relative mt-10 rounded-3xl bg-white/90 p-6 text-left shadow-[0_40px_90px_-40px_oklch(0.4_0.12_285/0.5)] ring-1 ring-black/5 backdrop-blur sm:p-8">
           <WaitlistForm />
         </div>
       </div>
