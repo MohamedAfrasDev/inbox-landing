@@ -1,10 +1,6 @@
 "use server"
 
-import {
-  sendDetailsNotification,
-  sendSignupNotification,
-  sendWelcomeEmail,
-} from "@/lib/mailer"
+import { saveDetails, saveSignup } from "@/lib/sheets"
 import {
   validateDetails,
   validateEmail,
@@ -28,8 +24,7 @@ function cleanSource(source: Source): Source {
   return clean
 }
 
-// TODO: store sign-ups in a database and add a per-address rate limit. Until then the
-// notification email to the team is the record of each sign-up.
+// TODO: add a per-address rate limit before sending real traffic.
 export async function joinWaitlist(input: {
   email: string
   source: Source
@@ -40,11 +35,10 @@ export async function joinWaitlist(input: {
   const result = validateEmail(input.email)
   if (!result.ok) return result
 
-  const recorded = await sendSignupNotification(result.email, cleanSource(input.source))
-  if (!recorded.ok) {
+  const saved = await saveSignup(result.email, cleanSource(input.source))
+  if (!saved.ok) {
     return { ok: false, error: "We could not save your spot. Please try again." }
   }
-  await sendWelcomeEmail(result.email)
   return { ok: true }
 }
 
@@ -56,7 +50,7 @@ export async function saveWaitlistDetails(
   const result = validateDetails(input)
   if (!result.ok) return result
 
-  const sent = await sendDetailsNotification(email.email, result.data)
-  if (!sent.ok) return { ok: false, errors: {} }
+  const saved = await saveDetails(email.email, result.data)
+  if (!saved.ok) return { ok: false, errors: {} }
   return { ok: true }
 }
