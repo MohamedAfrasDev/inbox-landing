@@ -27,7 +27,7 @@ export function Problem() {
               could not tell who mattered.
             </p>
           </div>
-          <ul className="mt-8 space-y-3">
+          <ul className="mt-7 space-y-3">
             {problemPoints.map(({ icon, text }) => {
               const Icon = icons[icon];
               return (
